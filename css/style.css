@@ -1,0 +1,211 @@
+/* thème */
+html {
+    background: #000 /*url(../asset/snow.jpg)no-repeat fixed center center /cover*/;
+        overflow-x: hidden;
+    }
+    header{
+        line-height: 2.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    header > h1{
+        line-height: 5rem;
+        text-align: center;
+        text-transform: uppercase;
+        color: #fff;
+        font-size: 100%;
+        margin: 2rem 0;
+        vertical-align: auto;
+    }
+    
+    
+    main img {
+        display: block;
+        width: 100%;
+    }
+    
+    header, main, footer{
+        max-width: 80rem;
+        padding: 1.0rem;
+        margin: 2rem auto 1rem;
+    }
+    
+    main div:first-child {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 2.0rem;
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+    
+    main h2 {
+        font-size: 3rem;
+        font-weight: bolder;
+        color: #fff;
+    }
+    
+    main span, footer, footer p {
+        color: #fff;
+    }
+    
+    main img {
+        box-shadow: 0 0 1.0rem #5b6061;
+    }
+    
+    main div:last-child {
+        margin-top: 10rem;
+    }
+    
+    footer {
+        text-align: center;
+    }
+    
+    
+    
+    /* Animation */
+    
+    h1{
+        animation: textep 3s linear infinite alternate;
+    
+    }
+    h1:hover{
+        animation: paused;
+    
+    }
+    
+    
+    
+    
+    @keyframes textep {
+        from{
+            transform: translate(10rem);
+            
+        }
+        to{
+            transform: translate(-10rem);
+            
+        }
+        
+    }
+    
+    
+    
+    /* Cube */
+    
+    .wrap{
+        /* contexte 3d */
+        perspective: 80rem;
+        /* position du cube */
+        perspective-origin: 50% 20.0rem;
+        margin-bottom: 50rem;
+    }
+    .cube{
+        position: relative;
+        z-index: 1;
+        width: 20rem;
+        transform-style: preserve-3d;
+        margin: 10rem auto;
+    }
+    
+    .cube div{
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 20rem;
+        height: 20rem;
+        opacity:0.8;
+        box-shadow: 0 0 1rem #222;
+    }
+    
+    .cube div:hover, .cube img:hover, .cube:hover {
+        animation-play-state: paused;
+        opacity: 1;
+        cursor: pointer;
+    }
+    
+    div img{
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    /* mettre en place les face */
+    .back{
+        transform: translateZ(-10rem) rotateY(180deg)scale(1);
+        transition-duration: 0.5s;
+    }
+    
+    .right{
+        transform: rotateY(-270deg) translateX(10rem)scale(1);
+        transform-origin: top right;
+        transition-duration: 0.5s;
+    }
+    
+    .left{
+        transform: rotateY(270deg) translateX(-10rem)scale(1);
+        transform-origin: center left;
+        transition-duration: 0.5s;
+    }
+    
+    .top{
+        transform: rotateX(-90deg) translateY(-10rem);
+        transform-origin: top center;
+        transition-duration: 0.5s;
+    }
+    
+    .bottom{
+        
+        transform: rotateX(90deg) translateY(10rem);
+        transform-origin: bottom center;
+    }
+    .front{
+        transform: translateZ(10rem)scale(1);
+        transition-duration: 0.5s;
+    }
+    
+    
+    
+    
+    /* animation */
+    .cube{
+        animation: spin 10s infinite linear;
+    }
+    
+    @keyframes spin{
+        from{
+            transform: rotateY(0deg);
+        }
+        to{
+            transform: rotateY(360deg);
+        }
+    }
+    
+    .cube-stop{
+        animation-play-state: paused;
+        opacity: 1;
+    }
+    
+    @media screen and (min-width: 600px) {
+        .cube div {
+            width: 35rem;
+            height: 35rem;
+        }
+    
+        .front{
+            transform: translateZ(25rem)scale(1);
+            transition-duration: 0.5s;
+        }
+    
+        .top{
+            transform: rotateX(-90deg) translateY(-25rem);
+            transform-origin: top center;
+            transition-duration: 0.5s;
+        }
+        
+        .bottom{
+            
+            transform: rotateX(90deg) translateY(25rem);
+            transform-origin: bottom center;
+        }
+    }
+    
