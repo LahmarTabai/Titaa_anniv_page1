@@ -32,7 +32,15 @@ input {
     font-size: inherit;
     transition: all 0.5rem ease-in-out;
 }
-button, select {
+button{
+    border: 0;
+    background-color: transparent;
+    font-size: initial;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+select {
     border: 0;
     background-color: transparent;
     font-size: initial;
