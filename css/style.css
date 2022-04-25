@@ -131,18 +131,18 @@ html {
     }
     /* mettre en place les face */
     .back{
-        transform: translateZ(-10rem) rotateY(180deg)scale(1);
+        transform: translateZ(-10rem) rotateY(180deg) scale(1);
         transition-duration: 0.5s;
     }
     
     .right{
-        transform: rotateY(-270deg) translateX(10rem)scale(1);
+        transform: rotateY(-270deg) translateX(10rem) scale(1);
         transform-origin: top right;
         transition-duration: 0.5s;
     }
     
     .left{
-        transform: rotateY(270deg) translateX(-10rem)scale(1);
+        transform: rotateY(270deg) translateX(-10rem) scale(1);
         transform-origin: center left;
         transition-duration: 0.5s;
     }
@@ -159,7 +159,7 @@ html {
         transform-origin: bottom center;
     }
     .front{
-        transform: translateZ(10rem)scale(1);
+        transform: translateZ(10rem) scale(1);
         transition-duration: 0.5s;
     }
     
@@ -192,7 +192,7 @@ html {
         }
     
         .front{
-            transform: translateZ(25rem)scale(1);
+            transform: translateZ(25rem) scale(1);
             transition-duration: 0.5s;
         }
     
