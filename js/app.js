@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const countdown = () => {
         //const countDate = new Date("mars 19, 2022 00:28:00").getTime(); // la date du mem jour 
 
-        const countDate = new Date("apr 27, 2022 00:00:00").getTime();
+        const countDate = new Date("apr 27, 2022 01:00:00").getTime();
 
 
         const now = new Date().getTime();
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         //const countDate = new Date("mars 19, 2022 00:28:00").getTime(); // la date du mem jour 
 
-        const countDate = new Date("apr 27, 2022 00:00:00").getTime();
+        const countDate = new Date("apr 27, 2022 01:00:00").getTime();
 
 
         const now = new Date().getTime();
@@ -55,6 +55,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const textMinute = Math.floor(gap % hour / minute);
         const textSecond = Math.floor(gap % minute / second);
 
+        if (textDay == 0 && textHour == 0 && textMinute == 0 && textSecond == 0) {
+            document.location.href = "happybirthday.html";
+            clearTimeout(countdown);
+        }
+
     };
     reload();
 
@@ -65,119 +70,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // setTimeout()
 
 
-    /* Audio */
-
-    // const ctx = new (window.AudioContext || window.webkitAudioContext)();
-
-    // const osc = ctx.createOscillator();
-
-    // osc.connect(ctx.destination);
-
-    // console.log(ctx);
-    // ctx.state.textContent = "ranning";
-    // console.log(ctx.state);
-
-
-    /* Button Audio */
-
-    // const btn = document.querySelector('#btn');
-
-    // const img = document.getElementById('img');
-
-    // btn.addEventListener('click', () => {
-    // img.classList.toggle('show');
-    // alert(" L'image va apparaitre ");
-    // })
-
-    // let mus = document.getElementById('Music');
-    // let taff = document.getElementById('taff');
-
-    // mus.addEventListener('click', musicPlay);
-    // function musicPlay() {
-
-
-    // }
-
-    // var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    // audioCtx.onstatechange = function() {
-    //     console.log(audioCtx.state);
-    // };
-
-    /* OnState Changes */
-    // const musicPlay =()=> {
-    //     console.log("btn clicked");
-    //     window.AudioContext = window.AudioContext || window.webkitAudioContext;
-    //     audioContext = new window.AudioContext();
-    //     audioContext.resume();
-    //     audioContext.onstatechange = () => console.log(audioContext.state);
-    //     console.log(audioContext); // Suspended
-    // }
-
-    // let mus = document.getElementById('Music');
-    // let taff = document.getElementById('taff');
-
-    // mus.addEventListener('click', musicPlay);
-
-
-    // function musicPlay() {
-    //         console.log("btn clicked");
-    //         window.AudioContext = window.AudioContext || window.webkitAudioContext;
-    //         audioContext = new AudioContext();
-    //         audioContext.resume();
-    //         audioContext.onstatechange = () => console.log(audioContext.state);
-    //         console.log(audioContext); // Suspended
-    //         setInterval();
-    //     }
-
-
-    // let mus = document.getElementById('Music');
-
-    // mus.addEventListener('click', musicPlay);
-
-    // function musicPlay() {
-    //     var music = new Audio("https://www.youtube.com/watch?v=l_Q-SySBYfk");
-    //     music.load();
-    //     music.play();
-    // }
-
-    // const masou = () => {
-
-    //     let mus = document.getElementById('Music');
-
-    //     mus.setAttribute("src", "./asset/Happy.mp3");
-    //     setInterval(masou, 1000);
-    // };
-    // masou();
-
-
-    // let mus = document.getElementById('Music');
-
-    // mus.addEventListener('click', ()=>{
-    //         play();
-    // });
-
-
-    // const masou = () => {
-
-    //     let mus = document.getElementById('Music');
-
-    //     mus.play();
-    //     setInterval(masou, 100);
-    // };
-    // masou();
-
-
-    // var audio = new Audio("./asset/Happy.mp3");
-
-    // audio.oncanplaythrough = function(){
-    // audio.play();
-    // }
-
-    // audio.loop = true;
-
-    // audio.onended = function(){
-    // audio.play();
-    // }
 
     var playBtn = document.getElementById('play');
 
